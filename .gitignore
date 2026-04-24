@@ -3,3 +3,4 @@ ai-service/.env
 ai-service/services/__pycache__
 ai-service/routes/__pycache__
 chroma_data/
+ai-service/seed_docs.py
