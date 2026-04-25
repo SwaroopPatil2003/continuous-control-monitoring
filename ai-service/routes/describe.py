@@ -1,14 +1,25 @@
 from flask import Blueprint, request, jsonify
 
-# Create blueprint
 describe_bp = Blueprint('describe', __name__)
 
-# Create route
+def load_prompt():
+    with open("prompts/describe_prompt.txt", "r") as f:
+        return f.read()
+
 @describe_bp.route('/', methods=['POST'])
 def describe():
     data = request.json
 
+    title = data.get("title", "")
+    description = data.get("description", "")
+
+    prompt_template = load_prompt()
+
+    final_prompt = prompt_template.format(
+        title=title,
+        description=description
+    )
+
     return jsonify({
-        "message": "Describe endpoint working",
-        "received_data": data
+        "generated_prompt": final_prompt
     })
