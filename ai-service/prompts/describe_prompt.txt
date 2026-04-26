@@ -12,7 +12,7 @@ Instructions:
 - Mention potential consequences (e.g., security breach, compliance failure, data loss)
 - Do NOT repeat the input text directly
 - Maintain a professional audit tone
-- Limit response to 4-5 sentences
+- Ensure the response is concise and does not exceed 120 words.
 - Avoid vague or generic statements
 
 Output format:
