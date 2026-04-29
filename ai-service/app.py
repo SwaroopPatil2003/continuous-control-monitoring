@@ -1,23 +1,17 @@
 from flask import Flask
-from flask_cors import CORS
+from routes.categorise import categorise_bp
+from routes.query import query_bp
+from routes.health import health_bp
 
-from routes.describe import describe_bp
-from routes.recommend import recommend_bp
+app = Flask(__name__)
 
-def create_app():
-    app = Flask(__name__)
-    CORS(app)
+app.register_blueprint(categorise_bp)
+app.register_blueprint(query_bp)
+app.register_blueprint(health_bp)
 
-    app.register_blueprint(describe_bp, url_prefix="/describe")
-    app.register_blueprint(recommend_bp, url_prefix="/recommend")
-    
-    @app.route('/health')
-    def health():
-        return {"status": "AI service running"}
-
-    return app
-
+@app.route("/")
+def home():
+    return {"message": "AI Service Running"}
 
 if __name__ == "__main__":
-    app = create_app()
-    app.run(port=5000, debug=True)
+    app.run(debug=True, port=5000)
