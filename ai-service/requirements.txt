@@ -1,0 +1,8 @@
+flask
+flask-cors
+python-dotenv
+requests
+chromadb
+sentence-transformers
+flask-limiter
+groq
