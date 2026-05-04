@@ -144,3 +144,36 @@ All endpoints were tested for:
 -Basic SQL injection patterns
 
 
+---
+
+## Week 2 Security Scan (OWASP ZAP)
+
+### Scan Target
+http://localhost:8080/test/secure
+
+---
+
+### Findings Summary
+
+| Severity | Count |
+|----------|------|
+| High     | 0 |
+| Medium   | 1 |
+| Low      | 1 |
+
+---
+
+### Key Findings
+
+#### 1. X-Content-Type-Options Header Missing
+- Severity: Medium  
+- Issue: Server does not send X-Content-Type-Options header  
+- Risk: Browser may MIME-sniff responses, leading to security risks  
+
+**Fix Plan:**
+Add security headers in Spring Boot configuration:
+
+```java
+response.setHeader("X-Content-Type-Options", "nosniff");
+
+
