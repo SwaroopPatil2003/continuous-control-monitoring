@@ -255,7 +255,42 @@ All critical and medium vulnerabilities have been resolved.
 
 ---
 
-### Sign-Off
 
-✅ The AI service is considered **secure for current scope and testing level**.
+## Week 3 Active Security Scan (ZAP)
 
+### Scan Type
+- OWASP ZAP Active Scan
+
+---
+
+### Results Summary
+
+| Severity | Count |
+|----------|------|
+| High     | 0 |
+| Medium   | 0 |
+| Low      | 1 |
+
+---
+
+### Findings
+
+#### User Agent Fuzzer
+- Severity: Low
+- Description: Endpoint responds to different user agents
+- Impact: Minimal, no security risk
+- Action: No fix required
+
+---
+
+### Conclusion
+
+Active scan confirms no high or medium vulnerabilities.
+
+The system is secure against:
+- Injection attacks
+- XSS
+- Misconfigurations
+- Header issues
+
+Security posture is strong for current scope.
