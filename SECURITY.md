@@ -207,3 +207,55 @@ response.setHeader("X-Content-Type-Options", "nosniff");
 All medium-level vulnerabilities have been successfully resolved.
 
 System security has been improved and validated using OWASP ZAP.
+
+
+---
+
+## Week 2 Security Sign-Off
+
+### Verification Summary
+
+| Control | Status |
+|--------|--------|
+| Input Sanitisation | ✅ Implemented |
+| Prompt Injection Protection | ✅ Implemented |
+| Rate Limiting | ✅ Implemented |
+| Security Headers | ✅ Implemented |
+| PII Protection | ✅ Verified |
+| OWASP ZAP Scan | ✅ Completed |
+
+---
+
+### Test Evidence
+
+- Prompt injection attempts blocked (400 response)
+- Empty input validation working
+- Rate limit enforced (429 response after threshold)
+- Security headers verified in browser
+- ZAP scan shows no medium/high vulnerabilities
+
+---
+
+### JWT Enforcement
+
+- Status: ⚠️ Pending / Implemented (update based on your backend)
+
+---
+
+### Final Assessment
+
+The system has been tested against common security risks including:
+
+- Injection attacks
+- API abuse (rate limiting)
+- Data exposure risks
+- Missing security headers
+
+All critical and medium vulnerabilities have been resolved.
+
+---
+
+### Sign-Off
+
+✅ The AI service is considered **secure for current scope and testing level**.
+
