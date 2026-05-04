@@ -176,4 +176,34 @@ Add security headers in Spring Boot configuration:
 ```java
 response.setHeader("X-Content-Type-Options", "nosniff");
 
+---
 
+## Week 2 Security Fix Verification
+
+### Fix Applied
+- Added X-Content-Type-Options header
+- Added X-Frame-Options header
+- Added X-XSS-Protection header
+
+### Re-scan Results
+
+| Severity | Count |
+|----------|------|
+| High     | 0 |
+| Medium   | 0 |
+| Low      | 1 |
+
+### Remaining Issue
+
+#### User Agent Fuzzer
+- Severity: Low
+- Impact: Minor — endpoint responds to different user agents
+- Action: No immediate fix required
+
+---
+
+### Status
+
+All medium-level vulnerabilities have been successfully resolved.
+
+System security has been improved and validated using OWASP ZAP.
