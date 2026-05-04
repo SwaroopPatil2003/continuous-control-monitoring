@@ -5,7 +5,11 @@ from flask_limiter.util import get_remote_address
 from routes.secure_routes import secure_bp
 from routes.generate_report import generate_bp
 
+
+
 app = Flask(__name__)
+from flask_talisman import Talisman
+Talisman(app)
 
 # ✅ Create limiter FIRST (global 30/min)
 limiter = Limiter(

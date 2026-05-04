@@ -294,3 +294,32 @@ The system is secure against:
 - Header issues
 
 Security posture is strong for current scope.
+
+---
+
+## Week 3 Final Security Hardening
+
+### Enhancement
+
+- Integrated Flask-Talisman for automatic security headers
+- Enforced Content Security Policy (CSP)
+- Added HTTP Strict Transport Security (HSTS)
+
+---
+
+### Re-scan Results
+
+| Severity | Count |
+|----------|------|
+| High     | 0 |
+| Medium   | 0 |
+| Low      | 0/1 |
+
+---
+
+### Final Status
+
+All security best practices implemented.  
+System hardened against common web vulnerabilities.
+
+Security posture is production-ready for current scope.
