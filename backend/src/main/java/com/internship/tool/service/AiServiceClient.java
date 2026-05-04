@@ -15,8 +15,6 @@ public class AiServiceClient {
 
     private final String AI_BASE_URL = "http://localhost:5000";
 
-    
-
     public AiServiceClient() {
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
         factory.setConnectTimeout(10000); // 10 seconds
@@ -44,9 +42,12 @@ public class AiServiceClient {
 
             return response.getBody();
 
+        } catch (ResourceAccessException e) {
+            System.out.println("AI service timeout or unavailable");
+            return null;
         } catch (Exception e) {
-            System.out.println("Error calling /secure-input: " + e.getMessage());
-            return null; // ✅ graceful fallback
+            System.out.println("Unexpected error calling AI service");
+            return null;
         }
     }
 
@@ -69,9 +70,12 @@ public class AiServiceClient {
 
             return response.getBody();
 
+        } catch (ResourceAccessException e) {
+            System.out.println("AI service timeout or unavailable");
+            return null;
         } catch (Exception e) {
-            System.out.println("Error calling /generate-report: " + e.getMessage());
-            return null; // ✅ graceful fallback
+            System.out.println("Unexpected error calling AI service");
+            return null;
         }
     }
 }
