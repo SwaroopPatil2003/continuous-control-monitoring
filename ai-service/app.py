@@ -11,25 +11,25 @@ app = Flask(__name__)
 from flask_talisman import Talisman
 Talisman(app)
 
-# ✅ Create limiter FIRST (global 30/min)
+
 limiter = Limiter(
     get_remote_address,
     app=app,
     default_limits=["30 per minute"]
 )
 
-# ✅ Register blueprints
+
 app.register_blueprint(secure_bp)
 app.register_blueprint(generate_bp)
 
 
 
-# ✅ Apply specific limit AFTER route exists
+
 app.view_functions['generate.generate_report'] = limiter.limit("10 per minute")(
     app.view_functions['generate.generate_report']
 )
 
-# ✅ Custom 429 response
+
 @app.errorhandler(429)
 def ratelimit_handler(e):
     return jsonify({

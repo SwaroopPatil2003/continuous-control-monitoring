@@ -241,7 +241,7 @@ System security has been improved and validated using OWASP ZAP.
 
 ### JWT Enforcement
 
-- **Status:** ⚠️ Pending / Implemented (update based on your backend)
+- **Status:** Implemented 
 
 ---
 
